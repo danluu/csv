@@ -15,7 +15,9 @@ if __name__ == "__main__":
     script_location = glob.glob("scripts/{}/*".format(project_name))[0]
 
     original_csvfiles = glob.glob('fixtures/*.csv')
-    output_csvfiles = ["output-{}-{}".format(project_name, file) for file in original_csvfiles]
+
+    output_csvfiles = [os.path.abspath("output-{}-{}".format(project_name, file)) for file in original_csvfiles]
+    original_csvfiles = [os.path.abspath(file) for file in original_csvfiles]
 
     # make sure the directory for output exists
     os.makedirs(os.path.dirname(output_csvfiles[0]), exist_ok=True)
