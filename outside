@@ -17,6 +17,9 @@ if __name__ == "__main__":
     original_csvfiles = glob.glob('fixtures/*.csv')
     output_csvfiles = ["{}-{}".format(project_name, file) for file in original_csvfiles]
 
+    # make sure the directory for output exists
+    os.makedirs(os.path.dirname(output_csvfiles[0]))
+
     files = zip(original_csvfiles, output_csvfiles)
 
     for original_csvfile, output_csvfile in files:
