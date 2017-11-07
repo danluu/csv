@@ -1,1 +1,1 @@
-node roundtrip.js $1 $2
+node ./scripts/node/roundtrip.js $1 $2
