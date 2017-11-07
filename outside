@@ -14,7 +14,7 @@ if __name__ == "__main__":
     project_name = sys.argv[1]
     script_location = glob.glob("scripts/{}/*".format(project_name))[0]
 
-    original_csvfiles = glob.glob('csvs/*.csv')
+    original_csvfiles = glob.glob('fixtures/*.csv')
     output_csvfiles = ["{}-{}".format(project_name, file) for file in original_csvfiles]
 
     files = zip(original_csvfiles, output_csvfiles)
