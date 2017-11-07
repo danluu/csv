@@ -18,7 +18,7 @@ if __name__ == "__main__":
     output_csvfiles = ["output-{}-{}".format(project_name, file) for file in original_csvfiles]
 
     # make sure the directory for output exists
-    os.makedirs(os.path.dirname(output_csvfiles[0]))
+    os.makedirs(os.path.dirname(output_csvfiles[0]), exist_ok=True)
 
     files = zip(original_csvfiles, output_csvfiles)
 
