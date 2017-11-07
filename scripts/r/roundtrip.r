@@ -9,6 +9,6 @@ print(args[0])
 print(args[1])
 print(args[2])
 
-data <- read.csv(file=args[1])
-write.csv(data, file=args[2])
+data <- read.csv(file=args[1], header=FALSE)
+write.table(data, row.names=FALSE, col.names=FALSE, file=args[2], sep=",")
 
